@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Cities Multi-Select</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select {
+            width: 300px;
+            height: 200px;
+            padding: 5px;
+        }
+        .hint {
+            font-size: 12px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Select Indian Cities</h2>
+
+    <label for="cities">Choose cities:</label><br>
+    <select id="cities" name="cities" multiple>
+        <option value="mumbai">Mumbai</option>
+        <option value="delhi">Delhi</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="chennai">Chennai</option>
+        <option value="kolkata">Kolkata</option>
+        <option value="pune">Pune</option>
+        <option value="ahmedabad">Ahmedabad</option>
+        <option value="jaipur">Jaipur</option>
+        <option value="lucknow">Lucknow</option>
+        <option value="surat">Surat</option>
+        <option value="kanpur">Kanpur</option>
+        <option value="nagpur">Nagpur</option>
+        <option value="indore">Indore</option>
+        <option value="bhopal">Bhopal</option>
+        <option value="visakhapatnam">Visakhapatnam</option>
+        <option value="patna">Patna</option>
+        <option value="vadodara">Vadodara</option>
+        <option value="ludhiana">Ludhiana</option>
+        <option value="agra">Agra</option>
+    </select>
+
+    <p class="hint">
+        Hold <b>Ctrl</b> (Windows) or <b>Cmd</b> (Mac) to select multiple cities.
+    </p>
+
+    <br><br>
+    <button onclick="showSelected()">Submit</button>
+
+    <p id="result"></p>
+
+    <script>
+        function showSelected() {
+            const select = document.getElementById("cities");
+            const selected = Array.from(select.selectedOptions).map(opt => opt.text);
+            document.getElementById("result").innerText =
+                "Selected Cities: " + (selected.length ? selected.join(", ") : "None");
+        }
+    </script>
+
+</body>
+</html>
