@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Flight Booking</h2>
+
+    <form>
+        <label for="from">Fly From:</label>
+        <select id="from" name="from">
+            <option value="">-- Select Departure City --</option>
+            <option value="DEL">Delhi</option>
+            <option value="BOM">Mumbai</option>
+            <option value="BLR">Bangalore</option>
+            <option value="HYD">Hyderabad</option>
+            <option value="MAA">Chennai</option>
+            <option value="CCU">Kolkata</option>
+            <option value="PNQ">Pune</option>
+            <option value="AMD">Ahmedabad</option>
+            <option value="GOI">Goa</option>
+            <option value="COK">Kochi</option>
+        </select>
+
+        <label for="to">Fly To:</label>
+        <select id="to" name="to">
+            <option value="">-- Select Destination City --</option>
+            <option value="DEL">Delhi</option>
+            <option value="BOM">Mumbai</option>
+            <option value="BLR">Bangalore</option>
+            <option value="HYD">Hyderabad</option>
+            <option value="MAA">Chennai</option>
+            <option value="CCU">Kolkata</option>
+            <option value="PNQ">Pune</option>
+            <option value="AMD">Ahmedabad</option>
+            <option value="GOI">Goa</option>
+            <option value="COK">Kochi</option>
+        </select>
+
+        <button type="submit">Search Flights</button>
+    </form>
+</div>
+
+</body>
+</html>
