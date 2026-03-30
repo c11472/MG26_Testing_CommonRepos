@@ -1,0 +1,43 @@
+****************************************************************************************************
+Screenshots automation in TDD or BDD framework
+*****************************************************************************************************
+
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class ScreenshotUtil {
+
+    public static String takeScreenshot(WebDriver driver, String fileName) throws IOException {
+        
+        // Generate timestamp to avoid overwriting
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        
+        // Define destination path
+        String destPath = "./ScreenCaptures/" + fileName + "_" + timestamp + ".png";
+        
+        // Capture screenshot
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File dest = new File(destPath);
+        
+        // Copy file
+        FileHandler.copy(src, dest);
+        
+        return destPath; // return path for reporting/logging
+    }
+    
+    public static void main(String[] args) throws IOException {
+    	WebDriver driver = new ChromeDriver();
+    	driver.get("https://www.google.com");
+    	ScreenshotUtil obj = new ScreenshotUtil();
+    	obj.takeScreenshot(driver, "file1");
+    
+		
+	}
+}
