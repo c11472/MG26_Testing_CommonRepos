@@ -1,0 +1,13 @@
+To configure multiple features and step definitions in a TestNG runner for Cucumber Java Selenium, you can specify multiple paths in the @CucumberOptions annotation:
+
+
+@CucumberOptions(
+        features = {"src/test/resources/features/feature1", "src/test/resources/features/feature2"},
+        glue = {"stepDefinitions.feature1", "stepDefinitions.feature2"},
+        plugin = {"pretty", "html:target/cucumber-reports/cucumber.html"},
+        monochrome = true,
+        tags = "@SmokeTest"
+)
+public class TestRunner extends AbstractTestNGCucumberTests {
+    
+}
