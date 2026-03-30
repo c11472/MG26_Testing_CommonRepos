@@ -1,0 +1,30 @@
+*******************************************************************************************
+                           BDD Framework - Optimization - MG26Testing - Final version
+*******************************************************************************************
+
+
+[Maintain different packages for multiple feature files and steps def files ]
+****************************************************************************** 
+Make sure that your project must have more than two feature files in different packages.
+There should be multiple step-def files for all the feature files.
+
+
+[Working with Reports in Automation Framework]
+***************************************************
+1. Log4J ---- done
+6. ExtentReport ---- customized HTML Report [pending]
+2. EmailableReport.html ---- Capture the dynamic data and update in    emailable report --- done
+3. Cucumber Reports 
+5. Runner class plugins to generate reports
+4  Screenshot capture [pending]
+
+***************************************************
+[Working with Hooks and Background in BDD project ]
+1. Use of Background in project
+2. Use of Hooks class in project
+
+***************************************************
+[Working with Selenium Exceptions by creating customized User Defined Exceptions in our project ]
+****************************************************
+
+
