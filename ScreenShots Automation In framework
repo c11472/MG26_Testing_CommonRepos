@@ -1,0 +1,18 @@
+ public static String takeScreenshot(WebDriver driver, String fileName) throws IOException {
+        
+        // Generate timestamp to avoid overwriting
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        
+        // Define destination path
+        String destPath = "./ScreenCaptures/" + fileName + "_" + timestamp + ".png";
+        
+        // Capture screenshot
+        File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File dest = new File(destPath);
+        
+        // Copy file
+        FileHandler.copy(src, dest);
+        
+        return destPath; // return path for reporting/logging
+    }
+   
