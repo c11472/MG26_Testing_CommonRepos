@@ -1,0 +1,2 @@
+String body = 
+					"{\"name\": \"restassured-demo-newrepos100Test34567\",\"description\": \"Created using GitHub REST API\" ,\"private\": \"false\"}";
