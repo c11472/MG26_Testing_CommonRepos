@@ -1,0 +1,59 @@
+import io.restassured.RestAssured;
+import io.restassured.http.Headers;
+import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
+import io.restassured.response.ResponseOptions;
+
+import static io.restassured.RestAssured.given;
+
+
+public class CreateRepos_Post {
+		    public static void main(String[] args) {
+
+	        RestAssured.baseURI = "https://api.github.com";
+	        
+	       
+
+	        String token = "";
+	        			String body = 
+					"{\"name\": \"restassured-demo-newrepos100Test345689\",\"description\": \"Created using GitHub REST API\" ,\"private\": \"false\"}";
+
+            String ep_Createrepos="/user/repos";
+
+	        Response response = (Response) given().relaxedHTTPSValidation()
+	        		.header("Authorization","Bearer " + token)
+	                .when()
+	               // .header("Accept", "application/vnd.github+json")
+	                .body(body).post(ep_Createrepos);
+	        
+	       
+	   //   int p=  response.statusCode();
+	      
+	     String StatusLine= response.statusLine();
+	     
+	        
+	     //   int statusCode=response.statusCode();
+	       
+	       System.out.println(StatusLine);
+	       
+	      int opt= response.getStatusCode();
+	      System.out.println(opt);
+	      
+	      String Line1 = response.getStatusLine();
+	      System.out.println(Line1);
+	     
+	    String JsonResponseData=  response.getBody().asString();
+	    String JsonResponseData1=  response.getBody().asPrettyString();
+	    ResponseBody JsonResponseData2=  response.getBody();// encrypted
+	    System.out.println(JsonResponseData2.asPrettyString());
+
+	   long tm=   response.time(); // Execution time
+	   
+	  Headers head1=  response.getHeaders(); 
+	      
+	       
+	       
+	  
+	                
+	    }		    
+	}
